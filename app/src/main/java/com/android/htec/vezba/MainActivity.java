@@ -13,6 +13,10 @@ public class MainActivity extends AppCompatActivity {
 
     //prva prome dev_promena na f2
 
+    //druga promena f1
+
+    //prva promena f2
+
     //druga promena f2
 
     //dev promena pre pull
