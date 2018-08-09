@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //prva promena f2
+    //prva prome dev_promena na f2
 
     //druga promena f2
 
