@@ -22,4 +22,7 @@ public class MainActivity extends AppCompatActivity {
     //treca promena f1
 
     //dev promena pre pull
+
+    int a = 3;
+    float b = a - 2;
 }
