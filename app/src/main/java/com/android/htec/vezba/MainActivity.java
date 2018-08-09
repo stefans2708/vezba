@@ -20,4 +20,6 @@ public class MainActivity extends AppCompatActivity {
     //druga promena f2
 
     //treca promena f1
+
+    //dev promena pre pull
 }
