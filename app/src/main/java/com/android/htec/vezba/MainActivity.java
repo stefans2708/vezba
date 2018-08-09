@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //prva promena f1
+    //prva prome dev_promena na f2
 
     //druga promena f1
 
@@ -25,4 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
     int a = 3;
     float b = a - 2;
+
+    double x = 32;
+    double y = 14;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
