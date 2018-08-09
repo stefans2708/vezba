@@ -20,4 +20,12 @@ public class MainActivity extends AppCompatActivity {
     //druga promena f2
 
     //dev promena pre pull
+
+    double x = 32;
+    double y = 14;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
