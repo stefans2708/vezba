@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Vezba</string>
     <string name="increment">Increment</string>
+    <string name="launch_modes">launch_modes</string>
+    <string name="standard">Standard</string>
+    <string name="single_top">Single top</string>
+    <string name="single_task">Single Task</string>
+    <string name="single_instance">Single Instance</string>
 </resources>

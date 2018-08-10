@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_standard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/standard" />
+
+    <Button
+        android:id="@+id/btn_single_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/single_top"
+        app:layout_constraintTop_toBottomOf="@id/btn_standard" />
+
+    <Button
+        android:id="@+id/btn_single_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/single_task"
+        app:layout_constraintTop_toBottomOf="@+id/btn_single_top" />
+
+    <Button
+        android:id="@+id/btn_single_instance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/single_instance"
+        app:layout_constraintTop_toBottomOf="@id/btn_single_task" />
+
+</android.support.constraint.ConstraintLayout>
+
