@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         binding.setViewModel(viewModel);
-        Toolbar toolbar = (Toolbar) binding.appBar;
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.appBar.findViewById(R.id.toolbar));
     }
 
     @Override
