@@ -6,4 +6,8 @@
     <string name="single_top">Single top</string>
     <string name="single_task">Single Task</string>
     <string name="single_instance">Single Instance</string>
+    <string name="image_in_dialog">Image in dialog</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="dialogs">Dialogs</string>
 </resources>

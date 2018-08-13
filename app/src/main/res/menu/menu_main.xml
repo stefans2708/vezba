@@ -5,4 +5,9 @@
         android:id="@+id/menuitem_launch_modes"
         android:title="@string/launch_modes"/>
 
+    <item
+        android:id="@+id/menuitem_dialogs"
+        android:title="@string/dialogs"/>
+
+
 </menu>
