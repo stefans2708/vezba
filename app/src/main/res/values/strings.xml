@@ -10,4 +10,5 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="dialogs">Dialogs</string>
+    <string name="pick_time">Pick time</string>
 </resources>

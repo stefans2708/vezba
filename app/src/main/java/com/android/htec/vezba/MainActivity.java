@@ -1,18 +1,26 @@
 package com.android.htec.vezba;
 
+import android.app.TimePickerDialog;
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.android.htec.vezba.databinding.ActivityMainBinding;
 import com.android.htec.vezba.dialog.ImageDialogFragment;
 import com.android.htec.vezba.launchmode.LaunchModesActivity;
 import com.android.htec.vezba.viewmodel.MainActivityViewModel;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +34,29 @@ public class MainActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         binding.setViewModel(viewModel);
         setSupportActionBar(binding.appBar.findViewById(R.id.toolbar));
+
+        initViews();
+        setObservers();
+    }
+
+    private void initViews() {
+        binding.timePicker.setIs24HourView(true);
+        binding.timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                Toast.makeText(MainActivity.this, "Selected time is: " + hourOfDay + ":" + minute, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void setObservers() {
+        viewModel.getBtnTimePicker().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean aBoolean) {
+                showTimePickerDialog();
+            }
+        });
+
     }
 
     @Override
@@ -44,6 +75,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showTimePickerDialog() {
+        Calendar calendar = Calendar.getInstance();
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, android.R.style.Theme_Holo_Light_Dialog, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                Toast.makeText(MainActivity.this, "You selected: " + hourOfDay + ":" + minute, Toast.LENGTH_SHORT).show();
+            }
+        }, calendar.get(Calendar.HOUR), calendar.get(Calendar.MINUTE), true);
+        timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        timePickerDialog.show();
     }
 
 }
